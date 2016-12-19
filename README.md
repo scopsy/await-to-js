@@ -4,6 +4,9 @@
 [![Downloads][download-badge]][npm-url]
 
 > Async await wrapper for easy error handling
+## Pre-requisites
+You need ES7 transpiler in order to use async/await functionality.
+You can use babel or typescript for that.
 
 ## Install
 
@@ -14,8 +17,6 @@ npm i await-to-js --save
 ## Usage
 
 ```js
-import to from "await-to-js"
-
 import to from './to.js';
 
 async function asyncTask(cb) {
