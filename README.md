@@ -1,9 +1,6 @@
 # await-to-js
 
 [![NPM version][npm-image]][npm-url]
-[![Build Status][travis-image]][travis-url]
-[![Coveralls Status][coveralls-image]][coveralls-url]
-[![Dependency Status][depstat-image]][depstat-url]
 [![Downloads][download-badge]][npm-url]
 
 > Async await wrapper for easy error handling
@@ -11,20 +8,20 @@
 ## Install
 
 ```sh
-npm i -D await-to-js
+npm i await-to-js --save
 ```
 
 ## Usage
 
 ```js
-import awaitToJs from "await-to-js"
+import to from "await-to-js"
 
-awaitToJs() // true
+
 ```
 
 ## License
 
-MIT © [Dima Grossman](http://blog.grossman.io)
+MIT © [Dima Grossman](http://blog.grossman.io) && Tomer Barnea
 
 [npm-url]: https://npmjs.org/package/await-to-js
 [npm-image]: https://img.shields.io/npm/v/await-to-js.svg?style=flat-square
