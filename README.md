@@ -14,10 +14,22 @@ You can use babel or typescript for that.
 npm i await-to-js --save
 ```
 
+## Config (optional)
+
+```js
+import {init} from 'await-to-js';
+
+// this is the same 'to' function but with given interceptor
+const to = init((err, data) => {
+  // use err and data
+});
+
+```
+
 ## Usage
 
 ```js
-import to from './to.js';
+import to from 'await-to-js';
 
 async function asyncTask(cb) {
      const [ err, user ] = await to(UserModel.findById(1));
