@@ -1,3 +1,4 @@
+
 /**
  * @param { Promise } promise
  * @param { Object= } errorExt - Additional Information you can pass to the err object
@@ -5,12 +6,12 @@
  */
 export default function awaitTo(promise, errorExt) {
   return promise
-    .then(data => [data, null])
+    .then(data => [null, data])
     .catch(err => {
       if(errorExt) {
         err = Object.assign(err, errorExt);
       }
 
-      return [undefined, err];
+      return [err];
     });
 }
