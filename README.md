@@ -20,15 +20,15 @@ npm i await-to-js --save
 import to from 'await-to-js';
 
 async function asyncTask(cb) {
-     const [ err, user ] = await to(UserModel.findById(1));
+     let [ err, user ] = await to(UserModel.findById(1));
      if(!user) return cb('No user found');
 
-     const [ err, savedTask ] = await to(TaskModel({userId: user.id, name: 'Demo Task'}));
+     let [ err, savedTask ] = await to(TaskModel({userId: user.id, name: 'Demo Task'}));
      if(err) return cb('Error occurred while saving task');
 
     if(user.notificationsEnabled) {
        const [ err ] = await to(NotificationService.sendNotification(user.id, 'Task Created'));
-        if(err) return cb('Error while sending notification');
+       if(err) return cb('Error while sending notification');
     }
 
     if(savedTask.assignedUser.id !== user.id) {
