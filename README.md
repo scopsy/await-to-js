@@ -17,7 +17,7 @@ npm i await-to-js --save
 ## Usage
 
 ```js
-import to from './to.js';
+import to from 'await-to-js';
 
 async function asyncTask(cb) {
      const [ err, user ] = await to(UserModel.findById(1));
