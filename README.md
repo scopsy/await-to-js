@@ -4,6 +4,7 @@
 [![Downloads][download-badge]][npm-url]
 
 > Async await wrapper for easy error handling
+
 ## Pre-requisites
 You need ES7 transpiler in order to use async/await functionality.
 You can use babel or typescript for that.
@@ -21,7 +22,7 @@ import to from 'await-to-js';
 
 async function asyncTask(cb) {
      let err, user, savedUser, notification;
-     
+
      [ err, user ] = await to(UserModel.findById(1));
      if(!user) return cb('No user found');
 
