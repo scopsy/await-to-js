@@ -45,19 +45,20 @@ const NotificationService = {
 
 
 async function asyncTask(userId, cb) {
-  const [ err, user ] = await to(UserModel.findById(userId));
+  let err, user, savedTask, notification;
+  [ err, user ] = await to(UserModel.findById(userId));
   if(!(user && user.id)) return cb('No user found');
 
-  const [ err, savedTask] = await to(TaskModel({userId: user.id, name: 'Demo Task'}));
+  [ err, savedTask] = await to(TaskModel({userId: user.id, name: 'Demo Task'}));
   if(err) return cb('Error occurred while saving task');
 
   if(user.notificationsEnabled) {
-    const [ err ] = await to(NotificationService.sendNotification(user.id, 'Task Created'));
+    [ err ] = await to(NotificationService.sendNotification(user.id, 'Task Created'));
     if(err) return cb('Error while sending notification');
   }
 
   if(savedTask.assignedUser.id !== user.id) {
-    const [ err, notification ] = await to(NotificationService.sendNotification(savedTask.assignedUser.id, 'Task was created for you'));
+    [ err, notification ] = await to(NotificationService.sendNotification(savedTask.assignedUser.id, 'Task was created for you'));
     if(err) return cb('Error while sending notification');
   }
 
