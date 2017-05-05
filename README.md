@@ -6,7 +6,7 @@
 > Async await wrapper for easy error handling
 
 ## Pre-requisites
-You need to use Node 7+ or an ES7 transpiler in order to use async/await functionality.
+You need to use Node 7.6 (or later) or an ES7 transpiler in order to use async/await functionality.
 You can use babel or typescript for that.
 
 ## Install
