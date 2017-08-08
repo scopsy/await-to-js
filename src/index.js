@@ -4,7 +4,7 @@
  * @param { Object= } errorExt - Additional Information you can pass to the err object
  * @return { Promise }
  */
-export default function awaitTo(promise, errorExt) {
+function awaitTo(promise, errorExt) {
   return promise
     .then(data => [null, data])
     .catch(err => {
@@ -15,3 +15,16 @@ export default function awaitTo(promise, errorExt) {
       return [err];
     });
 }
+
+if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
+  module.exports = awaitTo;
+}
+else {
+  if (typeof define === 'function' && define.amd) {
+    define([], function() {
+      return awaitTo;
+    });
+  }
+}
+
+export default awaitTo;
