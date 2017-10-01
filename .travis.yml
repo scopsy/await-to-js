@@ -1,9 +1,19 @@
 language: node_js
+branches:
+  only:
+    - master
+    - /^greenkeeper/.*$/
+cache:
+  yarn: true
+  directories:
+    - node_modules
+notifications:
+  email: false
 node_js:
-  - v7
-  - v6
-  - v5
-  - v4
-  - '0.12'
-after_script:
-  - 'npm run coveralls'
+  - node
+script:
+  - npm run test:prod && npm run build
+after_success:
+  - npm run report-coverage
+  - npm run deploy-docs
+  - npm run semantic-release
