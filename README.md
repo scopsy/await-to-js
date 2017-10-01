@@ -43,6 +43,18 @@ async function asyncTask(cb) {
 }
 ```
 
+## Type script usage
+```javascript
+interface ServerResponse {
+  test: number;
+}
+
+const p = Promise.resolve({test: 123});
+
+const [err, data] = await to<ServerResponse>(p);
+console.log(data.test);
+```
+
 ## License
 
 MIT © [Dima Grossman](http://blog.grossman.io) && Tomer Barnea
