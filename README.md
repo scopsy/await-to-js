@@ -20,7 +20,7 @@ npm i await-to-js --save
 ```js
 import to from 'await-to-js';
 
-async function asyncTask(cb) {
+async function asyncTaskWithCb(cb) {
      let err, user, savedUser, notification;
 
      [ err, user ] = await to(UserModel.findById(1));
@@ -40,6 +40,12 @@ async function asyncTask(cb) {
     }
 
     cb(null, savedTask);
+}
+
+async function asyncFunctionWithThrow() {
+  const [err, user] = await to(UserModel.findById(1));
+  if (!user) throw new Error('User not found');
+  
 }
 ```
 
