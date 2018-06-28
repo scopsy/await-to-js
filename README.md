@@ -49,7 +49,7 @@ async function asyncFunctionWithThrow() {
 }
 ```
 
-## Type script usage
+## TypeScript usage
 ```javascript
 interface ServerResponse {
   test: number;
