@@ -19,6 +19,8 @@ npm i await-to-js --save
 
 ```js
 import to from 'await-to-js';
+// If you use CommonJS (i.e NodeJS environment), it should be:
+// const to = require('await-to-js').default;
 
 async function asyncTaskWithCb(cb) {
      let err, user, savedUser, notification;
