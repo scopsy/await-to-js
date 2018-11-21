@@ -1,9 +1,6 @@
 import { to } from "../src/await-to-js"
 
 describe("Await to test", async () => {
-
-  const [err, data] = await to(Promise.resolve<{ name: number }>({ name: 123 }));
-  data.
   it("should return a value when resolved", async () => {
     const testInput = 41;
     const promise = Promise.resolve(testInput);
