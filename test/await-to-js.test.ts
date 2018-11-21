@@ -35,4 +35,13 @@ describe("Await to test", () => {
     expect(err.extraKey).toEqual(1)
     expect(err.error).toEqual("Error message")
   })
+
+  it("should return an error if passed object is not a promise", async () => {
+    const promise = {}
+
+    const [err, data] = await to<number>(promise)
+
+    expect(err).toEqual("Error")
+    expect(data).toBeUndefined()
+  })
 })
