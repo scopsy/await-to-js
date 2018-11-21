@@ -6,7 +6,7 @@
 export function to<T, U = Error>(
   promise: any,
   errorExt?: object
-): Promise<[U | null, T | undefined]> {
+): Promise<[U, T]> {
   return promise
     .then((data: T) => [null, data])
     .catch((err: U) => {
