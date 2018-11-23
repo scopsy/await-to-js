@@ -40,7 +40,7 @@ describe('Await to test', async () => {
     let user: { name: string };
     let err: Error;
 
-    [err, user] = await to(Promise.resolve({ name: '1234' }));
+    [err, user] = await to(Promise.resolve({ name: '123' }));
 
     expect(user.name).toEqual('123');
   });
