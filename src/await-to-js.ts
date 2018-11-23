@@ -3,19 +3,19 @@
  * @param { Object= } errorExt - Additional Information you can pass to the err object
  * @return { Promise }
  */
-export function to<T, U = Error>(
-  promise: any,
+export function to<T, U = Error> (
+  promise: Promise<T>,
   errorExt?: object
-): Promise<[U, T]> {
+): Promise<[U | null, T | undefined]> {
   return promise
-    .then((data: T) => [null, data])
-    .catch((err: U) => {
+    .then<[null, T]>((data: T) => [null, data])
+    .catch<[U, undefined]>((err: U) => {
       if (errorExt) {
-        Object.assign(err, errorExt)
+        Object.assign(err, errorExt);
       }
 
-      return [err, undefined]
-    })
+      return [err, undefined];
+    });
 }
 
-export default to
+export default to;

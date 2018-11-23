@@ -1,7 +1,7 @@
-import { to } from "../src/await-to-js"
+import { to } from '../src/await-to-js'
 
-describe("Await to test", async () => {
-  it("should return a value when resolved", async () => {
+describe('Await to test', async () => {
+  it('should return a value when resolved', async () => {
     const testInput = 41;
     const promise = Promise.resolve(testInput);
 
@@ -11,18 +11,18 @@ describe("Await to test", async () => {
     expect(data).toEqual(testInput);
   });
 
-  it("should return an error when promise is rejected", async () => {
+  it('should return an error when promise is rejected', async () => {
     const testInput = 41;
-    const promise = Promise.reject("Error");
+    const promise = Promise.reject('Error');
 
     const [err, data] = await to<number>(promise);
 
-    expect(err).toEqual("Error");
+    expect(err).toEqual('Error');
     expect(data).toBeUndefined();
   });
 
-  it("should add external properties to the error object", async () => {
-    const promise = Promise.reject({ error: "Error message" });
+  it('should add external properties to the error object', async () => {
+    const promise = Promise.reject({ error: 'Error message' });
 
     const [err] = await to<
       string,
@@ -33,6 +33,15 @@ describe("Await to test", async () => {
 
     expect(err).toBeTruthy();
     expect((err as any).extraKey).toEqual(1);
-    expect((err as any).error).toEqual("Error message")
+    expect((err as any).error).toEqual('Error message')
+  });
+
+  it('should receive the type of the parent if no type was passed', async () => {
+    let user: { name: string };
+    let err: Error;
+
+    [err, user] = await to(Promise.resolve({ name: '1234' }));
+
+    expect(user.name).toEqual('123');
   });
 });
