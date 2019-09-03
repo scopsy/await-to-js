@@ -63,6 +63,19 @@ const [err, data] = await to<ServerResponse>(p);
 console.log(data.test);
 ```
 
+## High Performant Catching
+The `to` method has extended functionality that has a slight performance cost **only** when catching errors. If you will be catching a lot of errors and best performance is required then use the `promiseVars` method.
+
+```javascript
+import { promiseVars } from "await-to-js"
+
+[ err, user ] = await promiseVars(UserModel.findById(1)) as [Error, User];
+
+if(err) process.exit()
+
+console.log( user )
+```
+
 ## License
 
 MIT © [Dima Grossman](http://blog.grossman.io) && Tomer Barnea
