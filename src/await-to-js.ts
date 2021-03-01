@@ -1,10 +1,10 @@
 /**
- * @param { Promise } promise
+ * @param { Readonly<Promise> } promise
  * @param { Object= } errorExt - Additional Information you can pass to the err object
  * @return { Promise }
  */
 export function to<T, U = Error> (
-  promise: Promise<T>,
+  promise: Readonly<Promise<T>>,
   errorExt?: object
 ): Promise<[U, undefined] | [null, T]> {
   return promise
