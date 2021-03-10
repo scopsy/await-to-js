@@ -11,7 +11,8 @@ export function to<T, U = Error> (
     .then<[null, T]>((data: T) => [null, data])
     .catch<[U, undefined]>((err: U) => {
       if (errorExt) {
-        Object.assign(err, errorExt);
+        const parsedError = Object.assign({}, err, errorExt);
+        return [parsedError, undefined];
       }
 
       return [err, undefined];
