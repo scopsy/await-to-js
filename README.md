@@ -63,6 +63,10 @@ const [err, data] = await to<ServerResponse>(p);
 console.log(data.test);
 ```
 
+## Other Open-source Libraries
+- [Notifire](https://github.com/notifirehq/notifire) - Multi-channel notification management for node.js
+
+
 ## License
 
 MIT © [Dima Grossman](http://blog.grossman.io) && Tomer Barnea
