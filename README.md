@@ -13,7 +13,7 @@
 			<img src="https://camo.githubusercontent.com/3ca722f7a9be6a1c65edd8297eaf978e70917c3a9344f182adcbe19a7df78474/68747470733a2f2f75706c6f6164732d73736c2e776562666c6f772e636f6d2f3631333062346432396262306162303965313461653965652f3631333065363933316637353564663330323230336663635f536964654c6f676f2532302d253230424c61636b2d702d3830302e706e67" width="200">
 		</a>
     </div>
-    <div align="center">  <sup>Open-source multi-channel notification management</sup>
+    <div align="center">  <sup>The open-source notification infrastructure</sup>
 </div>
     
 ## Pre-requisites
