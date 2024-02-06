@@ -79,7 +79,7 @@ console.log(data.test);
 
 MIT © [Dima Grossman](http://blog.grossman.io) && Tomer Barnea
 
-[npm-url]: https://npmjs.org/package/await-to-js
+[npm-url]: https://www.npmjs.org/package/await-to-js
 [npm-image]: https://img.shields.io/npm/v/await-to-js.svg?style=flat-square
 
 [travis-url]: https://travis-ci.org/scopsy/await-to-js
@@ -91,4 +91,4 @@ MIT © [Dima Grossman](http://blog.grossman.io) && Tomer Barnea
 [depstat-url]: https://david-dm.org/scopsy/await-to-js
 [depstat-image]: https://david-dm.org/scopsy/await-to-js.svg?style=flat-square
 
-[download-badge]: http://img.shields.io/npm/dm/await-to-js.svg?style=flat-square
+[download-badge]: https://img.shields.io/npm/dm/await-to-js.svg?style=flat-square
